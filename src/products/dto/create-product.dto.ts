@@ -19,7 +19,7 @@ export class CreateProductDto {
   @IsNumber()
   @IsPositive()
   @IsOptional()
-  @ApiProperty({ required: false })
+  @ApiProperty({ example: 20000, required: false })
   price?: number
 
   @IsString()
@@ -35,15 +35,22 @@ export class CreateProductDto {
   @IsInt()
   @IsPositive()
   @IsOptional()
+  @ApiProperty({ required: false })
   stock?: number
 
   @IsString({ each: true })
   @IsArray()
-  @ApiProperty({ required: true, isArray: true })
+  @ApiProperty({ required: true })
   sizes: string[]
 
   @IsString()
   @IsIn(['men', 'women', 'kid', 'unisex'])
   @ApiProperty({ required: true })
   gender: string
+
+  @IsString({ each: true })
+  @IsArray()
+  @IsOptional()
+  @ApiProperty()
+  tags: string[]
 }
