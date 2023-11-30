@@ -45,7 +45,7 @@ export class CreateProductDto {
 
   @IsString()
   @IsIn(['men', 'women', 'kid', 'unisex'])
-  @ApiProperty({ required: true })
+  @ApiProperty({ required: true, example: 'men' })
   gender: string
 
   @IsString({ each: true })
@@ -53,4 +53,10 @@ export class CreateProductDto {
   @IsOptional()
   @ApiProperty()
   tags: string[]
+
+  @IsString({ each: true })
+  @IsArray()
+  @IsOptional()
+  @ApiProperty()
+  images: string[]
 }

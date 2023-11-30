@@ -9,4 +9,5 @@
 3. Clonar el archivo ```.env.template``` renombrandolo a ```.env```
 4. Cambiar las variables de entorno
 5. Ejecutar ```docker-compose up -d``` para levantar la base de datos
-6. Iniciar el proyecto con ```pnpm start:dev```
+6. Ejecutar seed ```GET http://localhost:3000/api/seed```
+7. Iniciar el proyecto con ```pnpm start:dev```
